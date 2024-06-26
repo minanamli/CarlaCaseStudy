@@ -12,6 +12,8 @@
 		BA2711B02C2C124A00AB3028 /* RoverDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA2711AE2C2C124A00AB3028 /* RoverDetailCell.xib */; };
 		BA2711B42C2C1FD200AB3028 /* LabelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA2711B22C2C1FD200AB3028 /* LabelCell.swift */; };
 		BA2711B52C2C1FD200AB3028 /* LabelCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA2711B32C2C1FD200AB3028 /* LabelCell.xib */; };
+		BA57E3002C2C5D8C00FB52E6 /* PhotosScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA57E2FE2C2C5D8C00FB52E6 /* PhotosScreen.swift */; };
+		BA57E3012C2C5D8C00FB52E6 /* PhotosScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA57E2FF2C2C5D8C00FB52E6 /* PhotosScreen.xib */; };
 		BAA44E882C2B3DEA00092D7C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAA44E872C2B3DEA00092D7C /* AppDelegate.swift */; };
 		BAA44E912C2B3DEC00092D7C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAA44E902C2B3DEC00092D7C /* Assets.xcassets */; };
 		BAA44E942C2B3DEC00092D7C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BAA44E922C2B3DEC00092D7C /* LaunchScreen.storyboard */; };
@@ -43,6 +45,8 @@
 		BA2711AE2C2C124A00AB3028 /* RoverDetailCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RoverDetailCell.xib; sourceTree = "<group>"; };
 		BA2711B22C2C1FD200AB3028 /* LabelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelCell.swift; sourceTree = "<group>"; };
 		BA2711B32C2C1FD200AB3028 /* LabelCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LabelCell.xib; sourceTree = "<group>"; };
+		BA57E2FE2C2C5D8C00FB52E6 /* PhotosScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosScreen.swift; sourceTree = "<group>"; };
+		BA57E2FF2C2C5D8C00FB52E6 /* PhotosScreen.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotosScreen.xib; sourceTree = "<group>"; };
 		BAA44E842C2B3DEA00092D7C /* CarlaCase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CarlaCase.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAA44E872C2B3DEA00092D7C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BAA44E902C2B3DEC00092D7C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -97,6 +101,16 @@
 				BA2711B32C2C1FD200AB3028 /* LabelCell.xib */,
 			);
 			path = GlobalTableViewCells;
+			sourceTree = "<group>";
+		};
+		BA57E2FD2C2C5D5B00FB52E6 /* PhotoPages */ = {
+			isa = PBXGroup;
+			children = (
+				BA2711AA2C2C0BF000AB3028 /* PhotoVC.swift */,
+				BA57E2FE2C2C5D8C00FB52E6 /* PhotosScreen.swift */,
+				BA57E2FF2C2C5D8C00FB52E6 /* PhotosScreen.xib */,
+			);
+			path = PhotoPages;
 			sourceTree = "<group>";
 		};
 		BAA44E7B2C2B3DEA00092D7C = {
@@ -226,11 +240,11 @@
 		BAA44ED02C2B6EEB00092D7C /* RoverDetailPage */ = {
 			isa = PBXGroup;
 			children = (
+				BA57E2FD2C2C5D5B00FB52E6 /* PhotoPages */,
 				BA2711AC2C2C123500AB3028 /* RoverDetailCell */,
 				BAA44ED52C2BEAD000092D7C /* RoverDetailMVM */,
 				BAA44ED12C2B6F0200092D7C /* RoverDetailPage.swift */,
 				BAA44ED22C2B6F0200092D7C /* RoverDetailPage.xib */,
-				BA2711AA2C2C0BF000AB3028 /* PhotoVC.swift */,
 			);
 			path = RoverDetailPage;
 			sourceTree = "<group>";
@@ -310,6 +324,7 @@
 			files = (
 				BAA44ECF2C2B58EC00092D7C /* Inter-SemiBold.ttf in Resources */,
 				BA2711B02C2C124A00AB3028 /* RoverDetailCell.xib in Resources */,
+				BA57E3012C2C5D8C00FB52E6 /* PhotosScreen.xib in Resources */,
 				BAA44ECE2C2B58EC00092D7C /* Inter-Bold.ttf in Resources */,
 				BA2711B52C2C1FD200AB3028 /* LabelCell.xib in Resources */,
 				BAA44EBE2C2B49C100092D7C /* RoverCell.xib in Resources */,
@@ -339,6 +354,7 @@
 				BAA44EB42C2B40A100092D7C /* AppStyle.swift in Sources */,
 				BAA44E882C2B3DEA00092D7C /* AppDelegate.swift in Sources */,
 				BAA44EBD2C2B49C100092D7C /* RoverCell.swift in Sources */,
+				BA57E3002C2C5D8C00FB52E6 /* PhotosScreen.swift in Sources */,
 				BAA44E9D2C2B3EF000092D7C /* Constants.swift in Sources */,
 				BAA44EAE2C2B405C00092D7C /* RoverPage.swift in Sources */,
 				BAA44EB22C2B409600092D7C /* Extensions.swift in Sources */,

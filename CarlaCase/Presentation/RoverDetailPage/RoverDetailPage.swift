@@ -15,7 +15,8 @@ class RoverDetailPage: UIViewController {
     var roverTitle = ""
     var cameraNum = ""
     var photoNum = ""
-
+    var currentIndex = 0
+    
     var pageViewController: UIPageViewController!
     var pageControl: UIPageControl!
     
@@ -126,11 +127,23 @@ extension RoverDetailPage: UIPageViewControllerDataSource, UIPageViewControllerD
         if roverPhotos.isEmpty || index >= roverPhotos.count {
             return nil
         }
+        self.currentIndex = index
         
-        let photoViewController = PhotoVC()
-        photoViewController.imgUrl = roverPhotos[index]
-        photoViewController.index = index
-        return photoViewController
+        let photoVC = PhotoVC()
+        photoVC.delegate = self
+        photoVC.imgUrl = roverPhotos[index]
+        photoVC.index = index
+        return photoVC
+    }
+}
+
+extension RoverDetailPage: PhotoVCDelegate {
+    func imgTapped() {
+        let vc = PhotosScreen()
+        vc.imageUrls = self.roverPhotos
+        vc.initialIndex = self.currentIndex
+        vc.modalPresentationStyle = .fullScreen
+        self.present(vc, animated: true, completion: nil)
     }
 }
 
