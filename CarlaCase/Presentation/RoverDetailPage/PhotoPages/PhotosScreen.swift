@@ -48,8 +48,8 @@ class PhotosScreen: UIViewController {
         pageVC.didMove(toParent: self)
         pageVC.view.translatesAutoresizingMaskIntoConstraints = false
         
-        pageVC.view.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 250).isActive = true
-        pageVC.view.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: -250).isActive = true
+        pageVC.view.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 220).isActive = true
+        pageVC.view.bottomAnchor.constraint(equalTo: containerView.bottomAnchor, constant: -220).isActive = true
         pageVC.view.leadingAnchor.constraint(equalTo: containerView.leadingAnchor).isActive = true
         pageVC.view.trailingAnchor.constraint(equalTo: containerView.trailingAnchor).isActive = true
     }
