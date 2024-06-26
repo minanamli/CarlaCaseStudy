@@ -22,14 +22,14 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vO7-9n-B3e">
-                    <rect key="frame" x="0.0" y="59" width="393" height="180"/>
+                    <rect key="frame" x="0.0" y="59" width="393" height="200"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="180" id="C0w-wr-cTa"/>
+                        <constraint firstAttribute="height" constant="200" id="C0w-wr-cTa"/>
                     </constraints>
                 </view>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="bca-Pv-jUk">
-                    <rect key="frame" x="0.0" y="249" width="393" height="603"/>
+                    <rect key="frame" x="0.0" y="259" width="393" height="593"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </tableView>
             </subviews>
@@ -40,7 +40,7 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="bca-Pv-jUk" secondAttribute="trailing" id="6XR-07-c13"/>
                 <constraint firstAttribute="bottom" secondItem="bca-Pv-jUk" secondAttribute="bottom" id="Ept-lY-k6P"/>
                 <constraint firstItem="bca-Pv-jUk" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="ErT-sB-CAv"/>
-                <constraint firstItem="bca-Pv-jUk" firstAttribute="top" secondItem="vO7-9n-B3e" secondAttribute="bottom" constant="10" id="FEh-0P-KXj"/>
+                <constraint firstItem="bca-Pv-jUk" firstAttribute="top" secondItem="vO7-9n-B3e" secondAttribute="bottom" id="FEh-0P-KXj"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="vO7-9n-B3e" secondAttribute="trailing" id="JUv-kF-TyB"/>
                 <constraint firstItem="vO7-9n-B3e" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="ovl-gG-L8m"/>
             </constraints>

@@ -17,6 +17,7 @@ class RoverDetailPage: UIViewController {
     var photoNum = ""
 
     var pageViewController: UIPageViewController!
+    var pageControl: UIPageControl!
     
     var roverDetail: [LatestPhoto] = []
     var roverPhotos: [String] = []
@@ -27,6 +28,7 @@ class RoverDetailPage: UIViewController {
         setData()
         setPageView()
         setTableView()
+        configurePageControl()
     }
     
     func setData(){
@@ -39,7 +41,7 @@ class RoverDetailPage: UIViewController {
         pageViewController = UIPageViewController(transitionStyle: .scroll, navigationOrientation: .horizontal, options: nil)
         pageViewController.dataSource = self
         pageViewController.delegate = self
-        
+
         if let firstVC = viewControllerAtIndex(0) {
             let viewControllers = [firstVC]
             pageViewController.setViewControllers(viewControllers, direction: .forward, animated: true, completion: nil)
@@ -50,18 +52,24 @@ class RoverDetailPage: UIViewController {
         pageViewController.didMove(toParent: self)
         pageViewController.view.translatesAutoresizingMaskIntoConstraints = false
         pageViewController.view.topAnchor.constraint(equalTo: photosView.topAnchor).isActive = true
-        pageViewController.view.bottomAnchor.constraint(equalTo: photosView.bottomAnchor).isActive = true
+        pageViewController.view.bottomAnchor.constraint(equalTo: photosView.bottomAnchor, constant: 20).isActive = true
         pageViewController.view.leadingAnchor.constraint(equalTo: photosView.leadingAnchor).isActive = true
         pageViewController.view.trailingAnchor.constraint(equalTo: photosView.trailingAnchor).isActive = true
-        
-        setPageAppearance()
     }
     
-    func setPageAppearance(){
-        let ap = UIPageControl.appearance(whenContainedInInstancesOf: [UIPageViewController.self])
-        ap.backgroundColor = .clear
-        ap.pageIndicatorTintColor = AppStyle.color(for: .grayDFDFE7)
-        ap.currentPageIndicatorTintColor = AppStyle.color(for: .yellowFFD159)
+    func configurePageControl() {
+        pageControl = UIPageControl()
+        pageControl.numberOfPages = roverPhotos.count
+        pageControl.currentPage = 0
+        pageControl.translatesAutoresizingMaskIntoConstraints = false
+        pageControl.pageIndicatorTintColor = AppStyle.color(for: .grayDFDFE7)
+        pageControl.currentPageIndicatorTintColor = AppStyle.color(for: .yellowFFD159)
+        
+        photosView.addSubview(pageControl)
+        
+        pageControl.bottomAnchor.constraint(equalTo: photosView.bottomAnchor, constant: -10).isActive = true
+        pageControl.centerXAnchor.constraint(equalTo: photosView.centerXAnchor).isActive = true
+        
     }
     
     func setTableView(){
@@ -91,6 +99,27 @@ extension RoverDetailPage: UIPageViewControllerDataSource, UIPageViewControllerD
             return nil
         }
         return viewControllerAtIndex(index + 1)
+    }
+    
+    func presentationCount(for pageViewController: UIPageViewController) -> Int {
+        return roverPhotos.count
+    }
+    
+    func presentationIndex(for pageViewController: UIPageViewController) -> Int {
+        guard let firstViewController = pageViewController.viewControllers?.first as? PhotoVC else {
+            return 0
+        }
+        return firstViewController.index ?? 0
+    }
+    
+    func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
+        if completed {
+            guard let viewController = pageViewController.viewControllers?.first as? PhotoVC,
+                  let index = viewController.index else {
+                return
+            }
+            pageControl.currentPage = index
+        }
     }
     
     func viewControllerAtIndex(_ index: Int) -> PhotoVC? {
